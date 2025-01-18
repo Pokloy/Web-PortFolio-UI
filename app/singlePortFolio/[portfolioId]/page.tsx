@@ -6,10 +6,10 @@ interface Params {
   portfolioId: string;
 }
 
-const page = ({ params }: { params: Params }) => {
+const Page = ({ params }: { params: Params }) => {
   const portfolioId = params.portfolioId;
 
-  if(!portfolioId){
+  if (!portfolioId) {
     return <div>Loading...</div>;
   }
 
@@ -20,7 +20,8 @@ const page = ({ params }: { params: Params }) => {
   )
 }
 
-export default page
+export default Page;
+
 
 //client version
 // "use client"

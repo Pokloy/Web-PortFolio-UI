@@ -1,0 +1,17 @@
+.footerSection{
+    background-color: #080705;
+    color: #C3A995;
+    height: 10vh; 
+    width: 100%; 
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    .footerSection{
+        display: flex;
+        flex-direction: column;
+        align-content: flex-start;
+        justify-content: center;
+        align-items: center;
+    }   
+}

@@ -1,0 +1,37 @@
+.customHr{
+    width: 100%;          /* Make the line span the entire width */
+    height: 2px;          /* Set the height (thickness) of the line */
+    background-color: gray;  /* Set the line color */
+}
+.customHeader{
+    font-size: 4rem;
+    font-weight: bold;
+}
+.customSubHeader{
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.containerSettings{
+    display: flex;
+}
+
+  /* Mobile Styles */
+  @media (max-width: 768px) {
+    .containerSettings{
+        display: flex;
+        flex-direction: column;
+    }
+    .customHeader{
+        font-size: 2rem;
+        font-weight: bold;
+    }
+    .singleToolContainer{
+        padding: 2rem;
+    }
+    .singleToolContainer2{
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+  }
+

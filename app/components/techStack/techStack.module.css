@@ -1,0 +1,19 @@
+.header1{
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.techStackSection{
+    width: 100%; /* Equivalent to w-full */
+    display: flex; /* Equivalent to flex */
+    justify-content: center; /* Equivalent to justify-center */
+    position: relative; /* Equivalent to relative */
+    padding-top: 1.25rem; /* Equivalent to pt-5 */
+}
+
+  /* Mobile Styles */
+  @media (max-width: 768px) {
+    .techStackSection{
+        flex-direction: column;
+    }
+  }

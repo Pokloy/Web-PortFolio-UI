@@ -1,0 +1,287 @@
+.backgroundImg {
+    background-image: url('/laptopOfficeRustiq.png'); /* Replace with your image path */
+    background-size: cover; /* Ensures the image covers the entire area */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    height: 50vh; /* Example height: fills the viewport height */
+    width: 100%; /* Ensures full width */
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 10rem;
+}
+@keyframes slideInFromTop {
+    from {
+        transform: translateY(-100%); /* Start above the viewport */
+        opacity: 0; /* Fully transparent */
+    }
+    to {
+        transform: translateY(0); /* Slide into its original position */
+        opacity: 1; /* Fully visible */
+    }
+}
+
+.placeholder1 {
+    display: flex;
+    flex-direction: column;
+    background-color: #F6F1E1;
+    width: 50%;
+    height: 54%;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+
+    /* Animation */
+    animation: slideInFromTop 1s ease-out; /* 1s duration with easing */
+}
+
+.headerHome{
+    display: flex;
+    justify-content: center;
+    font-size: x-large;
+    font-weight: bold;
+}
+.headerhr {
+    height: .15rem; /* Sets the height of the horizontal line */
+    background-color: black; /* Sets the color of the line */
+    border: none; /* Removes the default border style of the <hr> */
+    width: 30%; /* Sets the width of the line */
+    margin: 0 auto; /* Centers the <hr> horizontally */
+}
+
+.specializedSection{
+    height: 30vh; 
+    width: 100%;
+    display: flex;
+    margin-top:1rem;
+    margin-bottom: 2rem;
+    padding-right: 5rem;
+    padding-left: 5rem;
+    align-items: center;
+}
+.UiUximg{
+    background-image: url('/UIUX1.png'); 
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    height: 10rem; 
+    width: 10rem; 
+}
+.UiUxP{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    margin-left: 2rem;
+}
+
+.FullStackimg{
+    background-image: url('/Programmer1.png'); 
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    height: 10rem; 
+    width: 10rem; 
+}
+.FullStackP{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+@keyframes slideInFromLeft {
+    from {
+        transform: translateX(-100%); /* Start off-screen to the left */
+        opacity: 0; /* Fully transparent */
+    }
+    to {
+        transform: translateX(0); /* Slide into its original position */
+        opacity: 1; /* Fully visible */
+    }
+}
+
+@keyframes slideInFromRight {
+    from {
+        transform: translateX(100%); /* Start off-screen to the right */
+        opacity: 0; /* Fully transparent */
+    }
+    to {
+        transform: translateX(0); /* Slide into its original position */
+        opacity: 1; /* Fully visible */
+    }
+}
+
+.FullStackSection {
+    width: 50%;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    animation: slideInFromLeft 1s ease-out; /* Slide in from the left */
+}
+
+.UiUxSection {
+    width: 50%;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    animation: slideInFromRight 1s ease-out; /* Slide in from the right */
+}
+.specializedHeader{
+    justify-content: center;
+    font-size: x-large;
+    font-weight: bold;
+}
+
+.portfolioBackground{
+    background-color: #080705;
+}
+
+.morePortfolioSection{
+    height: 15vh;
+    width: 100%;
+    background-color: #080705;
+    color: #C3A995;
+}
+.morePortfolioButton{
+  border: 2px solid #C3A995;
+  padding: 10px 20px;
+  border-radius: 5px;
+  color: #C3A995;
+  background-color: transparent;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.morePortfolioButton:hover {
+    background-color: #C3A995;
+    color: black;
+}
+
+.sayingSection{
+    background-image: url('/FireShipYoutube.png'); 
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    height: 60vh; 
+    width: 100%; 
+}
+
+.placeholder2 {
+    display: flex;
+    flex-direction: column;
+    background-color: #080705;
+    color: #C3A995;
+    width: 30%;
+    height: 40%;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-left: 3rem;
+    padding-right: 1rem;
+
+    /* Animation */
+    animation: slideInFromTop 1s ease-out; /* 1s duration with easing */
+}
+
+  /* Mobile Styles */
+  @media (max-width: 768px) {
+    .backgroundImg {
+        height: 80vh; /* Example height: fills the viewport height */
+        width: 100%; /* Ensures full width */
+        padding-right: .30rem;
+        padding-left: .30rem;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+        background-position:left;
+    }
+    .placeholder1 {
+        display: flex;
+        flex-direction: column;
+        background-color: #F6F1E1;
+        width: 100%;
+        height: max-content;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+    .mobileP{
+        text-align: justify;
+    }
+    .specializedSection{
+        height: max-content; 
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        margin-top:1rem;
+        margin-bottom: 2rem;
+        padding-right: .30rem;
+        padding-left: .30rem;
+        align-items: center;
+    }
+    .UiUxSection {
+        width: 90%;
+        flex-direction: column;
+        padding: .30rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        animation: slideInFromRight 1s ease-out; /* Slide in from the right */
+    }
+    .UiUxP{
+        width: 97%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-left: 0rem;
+        text-align: justify;
+        padding: .30rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .FullStackSection {
+        width: 90%;
+        flex-direction: column;
+        padding: .30rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        animation: slideInFromLeft 1s ease-out; /* Slide in from the left */
+    }
+    .FullStackP{
+        width: 97%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-left: 0rem;
+        text-align: justify;
+        padding: .30rem;
+        margin-bottom: 1.5rem;
+    }
+    .placeholder2 {
+        display: flex;
+        flex-direction: column;
+        background-color: #080705;
+        color: #C3A995;
+        width: 80%;
+        height: max-content;
+        padding-top: 1rem;
+        padding-bottom: 1.5rem;
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+    .sayingSection{
+        display: flex;
+        justify-content: center;
+    }
+    .experieceSectionMobile{
+        display: flex;
+        flex-direction: column; 
+        align-items: center;
+        justify-content: center;
+    }
+  }

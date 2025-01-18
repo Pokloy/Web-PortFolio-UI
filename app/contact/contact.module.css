@@ -1,0 +1,70 @@
+.backgroundImgContact{
+    background-image: url('/contactRustiq.png'); /* Replace with your image path */
+    background-size: cover; /* Ensures the image covers the entire area */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    height: 50vh; /* Example height: fills the viewport height */
+    width: 100%; /* Ensures full width */
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 10rem;
+}
+
+.headerHome{
+    display: flex;
+    justify-content: center;
+    font-size: 3.5rem;
+    font-weight: bold;
+}
+
+.placeholder1 {
+    display: flex;
+    flex-direction: column;
+    background-color: #F6F1E1;
+    width: 50%;
+    height: 40%;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    justify-content: center;
+
+    /* Animation */
+    animation: slideInFromTop 1s ease-out; /* 1s duration with easing */
+}
+
+.mobileContainer{
+    display: flex;         /* flex */
+    margin-left: 7rem;     /* mx-28 (28 * 0.25rem) */
+    margin-right: 7rem;    /* mx-28 */
+    margin-top: 5rem;      /* my-20 (20 * 0.25rem) */
+    margin-bottom: 5rem;   /* my-20 */
+    justify-content: center; /* justify-center */
+}
+
+  /* Mobile Styles */
+  @media (max-width: 768px) {
+    .placeholder1 {
+        height: 30%;
+        width: 80%;
+        padding:0rem;
+    }
+    .backgroundImgContact{
+        height: 30vh;
+        padding-right: 0rem;
+        justify-content: center;
+    }
+    .headerHome{
+        font-size: 2rem;
+    }
+    .mobileContainer{
+        display: flex;         /* flex */
+        flex-direction: column;
+        margin-left: 0rem;     /* mx-28 (28 * 0.25rem) */
+        margin-right: 0rem;    /* mx-28 */
+        margin-top: 0rem;      /* my-20 (20 * 0.25rem) */
+        margin-bottom: 0rem;   /* my-20 */
+        justify-content: center; /* justify-center */
+    }
+  }

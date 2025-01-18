@@ -1,0 +1,10 @@
+Running on the developement Server. 
+
+"npm run dev"
+
+
+Build and Start the App in Production Mode (Optional)
+
+"npm run build"
+
+"npm start"

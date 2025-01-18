@@ -1,0 +1,19 @@
+.exportBtn{
+    color: #F6F1E1;
+}
+.activeBtn {
+    color: #f6f1e1;
+    border-bottom: 2px solid #f6f1e1; /* Add the underline effect */
+    transition: border-color 0.3s ease-in-out; /* Smooth transition */
+}
+
+
+  /* Mobile Styles */
+  @media (max-width: 768px) {
+    .carFontSize{
+        font-size: .80rem;
+    }
+    .carMargin{
+        padding-left: .50rem;
+    }
+  }

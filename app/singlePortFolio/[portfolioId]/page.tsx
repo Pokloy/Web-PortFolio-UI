@@ -30,7 +30,7 @@ import React from 'react'
 import SinglePortFolio from '../singlePortFolio';
 import { useParams } from "next/navigation";
 
-const page: React.FC = () => {
+const Page: React.FC = () => {
   const params = useParams();
   const portfolioId = params?.portfolioId;
 
@@ -43,4 +43,4 @@ const page: React.FC = () => {
   )
 }
 
-export default page;
+export default Page;

@@ -49,7 +49,7 @@ import TechStackModule from '../singleTechStack.module.css';
 import WorkCreated from '../workCreated';
 import { useParams } from "next/navigation";  // Use useParams for App Router
 
-const SingleTechStackPage: React.FC = () => {
+const Page: React.FC = () => {
   const params = useParams();  // Get the params object
   const techStackId = params?.techStackId;  // Extract techStackId from params
 
@@ -76,4 +76,4 @@ const SingleTechStackPage: React.FC = () => {
   )
 }
 
-export default SingleTechStackPage;
+export default Page;

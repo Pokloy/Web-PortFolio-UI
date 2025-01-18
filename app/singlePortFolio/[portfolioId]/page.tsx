@@ -6,7 +6,11 @@ interface Params {
   portfolioId: string;
 }
 
-const Page = ({ params }: { params: Params }) => {
+interface PageProps {
+  params: Params;
+}
+
+const Page = ({ params }: PageProps) => {
   const portfolioId = params.portfolioId;
 
   if (!portfolioId) {
@@ -21,6 +25,16 @@ const Page = ({ params }: { params: Params }) => {
 }
 
 export default Page;
+
+export async function getServerSideProps(context: any) {
+  const { portfolioId } = context.params;
+  return {
+    props: {
+      params: { portfolioId }, // passing `params` to the component
+    },
+  };
+}
+
 
 
 //client version

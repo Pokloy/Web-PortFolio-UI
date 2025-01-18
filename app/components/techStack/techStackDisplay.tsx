@@ -1,7 +1,7 @@
 import React from 'react'
 import TechStack from './techStack';
 
-function techStackDisplay() {
+function TechStackDisplay() {
   return (
     <div>
         <TechStack />
@@ -9,4 +9,4 @@ function techStackDisplay() {
   )
 }
 
-export default techStackDisplay
+export default TechStackDisplay

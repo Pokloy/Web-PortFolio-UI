@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
-import SingleTechStack from "./singleTechStack.module.css"
+import SingleTechStackModules from "./singleTechStack.module.css"
 
 interface TechStack{
   _id:string;
@@ -19,7 +19,7 @@ interface singleTechStack {
 }
 
 
-const singleTechStack: React.FC<singleTechStack> = ({ techStackId }) => {
+const SingleTechStack: React.FC<singleTechStack> = ({ techStackId }) => {
   const [techStack, SetTechStack] = useState<TechStack| null>(null);
     
       
@@ -57,7 +57,7 @@ const singleTechStack: React.FC<singleTechStack> = ({ techStackId }) => {
   return (
     <div>
      <div>
-        <p className={SingleTechStack.customHeader}>{techStack?.header}</p>
+        <p className={SingleTechStackModules.customHeader}>{techStack?.header}</p>
       </div>
       <div className="py-5">{techStack?.date} | By: Alier E. Torrenueva</div>
       <div>
@@ -68,11 +68,11 @@ const singleTechStack: React.FC<singleTechStack> = ({ techStackId }) => {
           height={400}
           className="w-full h-auto"
         /> 
-        <div><p className={`${SingleTechStack.customSubHeader}`}>{techStack?.subHeader}</p></div>
+        <div><p className={`${SingleTechStackModules.customSubHeader}`}>{techStack?.subHeader}</p></div>
         <div><p className="pt-9 text-justify">{techStack?.content}</p></div>
       </div> 
     </div>
   )
 }
 
-export default singleTechStack
+export default SingleTechStack

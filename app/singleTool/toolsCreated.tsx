@@ -13,7 +13,7 @@ interface Tool{
     toolsId:number;
 }
 
-const toolsCreated = () => {
+const ToolsCreated = () => {
   const [tools, setTools] = useState<Tool[]>([]);
 
   const shuffleArray = (array: Tool[]) => {
@@ -58,4 +58,4 @@ const toolsCreated = () => {
   )
 }
 
-export default toolsCreated
+export default ToolsCreated

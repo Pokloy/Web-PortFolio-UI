@@ -1,10 +1,10 @@
 import React from 'react'
 import Tools from './tools';
 
-const toolsDisplay = () => {
+const ToolsDisplay = () => {
   return (
     <div><Tools /></div>
   )
 }
 
-export default toolsDisplay
+export default ToolsDisplay

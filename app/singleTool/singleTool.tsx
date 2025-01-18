@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
-import SingleTool from "./singleTool.module.css";
+import SingleToolModules from "./singleTool.module.css";
 
 interface Tool{
     _id:string;
@@ -18,7 +18,7 @@ interface singleTool{
     toolId:string;
 }
 
-const singleTool: React.FC<singleTool> = ({ toolId }) => {
+const SingleTool: React.FC<singleTool> = ({ toolId }) => {
   const [tools, setTools] = useState<Tool| null>(null);
 
   useEffect(() => {
@@ -51,9 +51,9 @@ const singleTool: React.FC<singleTool> = ({ toolId }) => {
   }
 
   return (
-    <div className={SingleTool.singleToolContainer}>
+    <div className={SingleToolModules.singleToolContainer}>
         <div>
-          <p className={SingleTool.customHeader}>{tools?.header}</p>
+          <p className={SingleToolModules.customHeader}>{tools?.header}</p>
         </div>
         <div className="py-5">{tools?.date} | By: Alier E. Torrenueva</div>
         <div>
@@ -64,11 +64,11 @@ const singleTool: React.FC<singleTool> = ({ toolId }) => {
               height={400}
               className="w-full h-auto"
             /> 
-            <div><p className={SingleTool.customSubHeader}>{tools?.subHeader}</p></div>
+            <div><p className={SingleToolModules.customSubHeader}>{tools?.subHeader}</p></div>
             <div><p className={`pt-9 text-justify`}>{tools?.content}</p></div>
         </div>
     </div>
   )
 }
 
-export default singleTool
+export default SingleTool

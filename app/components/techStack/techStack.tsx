@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
-import TechStack from "./techStack.module.css";
+import TechStackModules from "./techStack.module.css";
 import Link from "next/link";
 
 interface techStack {
@@ -15,7 +15,7 @@ interface techStack {
     date: string;
 }
 
-const techStack = () => {
+const TechStack = () => {
     const [techStack, setTechStack] = useState<techStack[]>([]);
 
     function getAllTechStack(){
@@ -48,7 +48,7 @@ const techStack = () => {
     }, []);
 
   return (
-    <div className={TechStack.techStackSection}>
+    <div className={TechStackModules.techStackSection}>
         {techStack.length > 0 ? (
            techStack.map((stack, index) => (
                 <div key={index} className="card-container group m-3">
@@ -62,7 +62,7 @@ const techStack = () => {
                         height={400}
                         className="w-full h-auto"
                     />
-                    <p className={`text-center mt-3 ${TechStack.header1} transition-colors duration-300 group-hover:text-blue-500`}>
+                    <p className={`text-center mt-3 ${TechStackModules.header1} transition-colors duration-300 group-hover:text-blue-500`}>
                         {stack.header}
                     </p>
                     </div>
@@ -76,4 +76,4 @@ const techStack = () => {
   )
 }
 
-export default techStack
+export default TechStack

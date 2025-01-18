@@ -20,7 +20,7 @@ interface Work {
   }[];
 }
 
-const PortCarouselAll = () => {
+const GetAllWorkInfo = () => {
   const [workData, setWorkData] = useState<Work[]>([]);
   const [activeButton, setActiveButton] = useState<string>("Dynamic Web"); // Default to "UX"
 
@@ -125,4 +125,4 @@ const PortCarouselAll = () => {
   );
 };
 
-export default PortCarouselAll;
+export default GetAllWorkInfo;

@@ -20,7 +20,7 @@ interface Work {
   }[];
 }
 
-const PortCarousel = () => {
+const GetWorkInfo = () => {
   const [workData, setWorkData] = useState<Work[]>([]);
 
   function getPictures() {
@@ -85,4 +85,4 @@ const PortCarousel = () => {
   );
 };
 
-export default PortCarousel;
+export default GetWorkInfo;

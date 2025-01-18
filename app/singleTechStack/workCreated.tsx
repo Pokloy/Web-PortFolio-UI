@@ -19,7 +19,7 @@ interface Porfolio {
     workId: number;
 }
 
-function workCreated() {
+function WorkCreated() {
   const [workPicture, setWorkPicture] = useState<Porfolio[]>([]);
 
     // Function to shuffle array
@@ -65,4 +65,4 @@ function workCreated() {
   );
 }
 
-export default workCreated;
+export default WorkCreated;

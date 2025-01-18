@@ -24,7 +24,7 @@ interface singlePortFolio{
     portfolioId:string;
 }
 
-const singlePortFolio: React.FC<singlePortFolio> = ({ portfolioId }) => {
+const SinglePortFolio: React.FC<singlePortFolio> = ({ portfolioId }) => {
     const [portFolio, setPortFolio] = useState<PortFolio| null>(null);
     
     useEffect(() => {
@@ -95,4 +95,4 @@ const singlePortFolio: React.FC<singlePortFolio> = ({ portfolioId }) => {
   )
 }
 
-export default singlePortFolio
+export default SinglePortFolio

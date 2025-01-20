@@ -130,7 +130,7 @@ const Tools = () => {
           ))
         ) : (
           <p className="col-span-full text-center w-full">
-            No images to display or failed to load images.
+            No images appear? Try refreshing it or move to Google Chrome
           </p>
         )}
       </div>

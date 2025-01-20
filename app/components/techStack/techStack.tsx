@@ -70,7 +70,7 @@ const TechStack = () => {
                 </div>
            ))
         ):(
-            <p className="col-span-full text-center">No images to display or failed to load images.</p>
+            <p className="col-span-full text-center">No images appear? Try refreshing it or move to Google Chrome</p>
         )}
     </div>
   )

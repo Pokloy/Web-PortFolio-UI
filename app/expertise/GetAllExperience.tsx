@@ -41,7 +41,7 @@ const GetAllExperience = () => {
             </p>
             ))
           ) : (
-            <p>Loading jobs or no jobs available.</p>
+            <p>No jobs appear? Try refreshing it or Move to Google Chrome</p>
           )} 
     </div>
   )

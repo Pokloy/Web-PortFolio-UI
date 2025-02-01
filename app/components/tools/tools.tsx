@@ -98,7 +98,7 @@ const Tools = () => {
     <div className="relative w-full flex flex-col items-center pt-5">
       <div
         ref={carouselRef}
-        className="carousel-container w-full flex gap-5 overflow-hidden px-5 cursor-grab"
+        className="carousel-container w-full flex gap-5 overflow-hidden px-5 cursor-grab justify-center items-center "
         onMouseDown={handleMouseDown}
         onMouseLeave={handleMouseLeave}
         onMouseUp={handleMouseUp}
@@ -129,9 +129,13 @@ const Tools = () => {
             </div>
           ))
         ) : (
-          <p className="col-span-full text-center w-full">
-            No images appear? Try refreshing it or move to Google Chrome
-          </p>
+          <>
+            <div className="col-span-full flex flex-col justify-center items-center my-20">
+            <div className="loading-spinner-black"></div>
+            <p className="ml-4">No Technology Stacks appear? Try refreshing it or Move to Google Chrome</p>
+            </div>
+          </>
+          
         )}
       </div>
 

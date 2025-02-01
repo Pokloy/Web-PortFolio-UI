@@ -1,5 +1,5 @@
 .expertiseBanner{
-    background-image: url('/rustikAlier 1.png'); 
+    background-image: url('/rustikAlier 1.webp'); 
     background-size: cover; 
     background-position: center; 
     background-repeat: no-repeat;
@@ -63,7 +63,7 @@
   /* Mobile Styles */
   @media (max-width: 768px) {
     .expertiseBanner{
-        background-image: url('/rustikAlier 1.png'); 
+        background-image: url('/rustikAlier 1.webp'); 
         background-size: cover; 
         background-position:left; 
         background-repeat: no-repeat;

@@ -34,15 +34,18 @@ const GetAllExperience = () => {
 
   return (
     <div>
-         {jobs.length > 0 ? (
-            jobs.map((job, index) => (
-            <p key={index} className="mb-2">
-              <strong>{job.timeline}: </strong> {job.company}<br />
-            </p>
-            ))
-          ) : (
-            <p>No jobs appear? Try refreshing it or Move to Google Chrome</p>
-          )} 
+      {jobs.length > 0 ? (
+        jobs.map((job, index) => (
+          <p key={index} className="mb-2">
+            <strong>{job.timeline}: </strong> {job.company}<br />
+          </p>
+        ))
+      ) : (
+        <div className="col-span-full flex justify-center items-center flex-col my-10">
+          <div className="loading-spinner-black"></div>
+          <p className="ml-4">No jobs appear? Try refreshing it or Move to Google Chrome</p>
+        </div>
+      )}
     </div>
   )
 }

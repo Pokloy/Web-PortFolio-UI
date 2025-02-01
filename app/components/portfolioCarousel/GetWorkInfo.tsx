@@ -4,9 +4,9 @@ import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-
+// Defining the Work type
 interface Work {
-  _id:string;
+  _id: string;
   workId: number;
   header: string;
   picture: string;
@@ -22,6 +22,7 @@ interface Work {
 
 const GetWorkInfo = () => {
   const [workData, setWorkData] = useState<Work[]>([]);
+  const [isLoading, setIsLoading] = useState<boolean>(true); // Track loading state
 
   function getPictures() {
     fetch(`${process.env.NEXT_PUBLIC_API_URL}/work/get-work`, {
@@ -46,9 +47,11 @@ const GetWorkInfo = () => {
         const randomPictures = formattedData.sort(() => 0.5 - Math.random()).slice(0, 8);
 
         setWorkData(randomPictures);
+        setIsLoading(false); // Set loading to false once data is fetched
       })
       .catch((error) => {
         console.error("Error:", error);
+        setIsLoading(false); // Set loading to false in case of an error
       });
   }
 
@@ -58,14 +61,13 @@ const GetWorkInfo = () => {
 
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 p-4">
-      {workData.length > 0 ? (
+      {isLoading ? (
+        <div className="col-span-full flex justify-center items-center h-full text-white">
+          <div className="loading-spinner"></div>
+        </div>
+      ) : workData.length > 0 ? (
         workData.map((work, index) => (
-          <Link
-            key={index}
-            href={`/singlePortFolio/${work._id}`}
-            className="block group"
-            // Replace `"#"` with the actual link when available
-          >
+          <Link key={index} href={`/singlePortFolio/${work._id}`} className="block group">
             <div className="w-full flex justify-center relative">
               <Image
                 src={work.picture}

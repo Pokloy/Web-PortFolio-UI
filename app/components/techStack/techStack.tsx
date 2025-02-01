@@ -70,7 +70,12 @@ const TechStack = () => {
                 </div>
            ))
         ):(
-            <p className="col-span-full text-center">No images appear? Try refreshing it or move to Google Chrome</p>
+            <>
+            <div className="col-span-full flex justify-center items-center flex-col my-20">
+            <div className="loading-spinner-black"></div>
+            <p className="ml-4">No Technology Stacks appear? Try refreshing it or Move to Google Chrome</p>
+            </div>
+            </>
         )}
     </div>
   )

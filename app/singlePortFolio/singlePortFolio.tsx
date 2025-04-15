@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import PortfolioModule from "./singlePortFolio.module.css";
 import useSWR from "swr";
+import Link from 'next/link';
 
 interface PortFolio{
     _id:string;
@@ -19,6 +20,7 @@ interface PortFolio{
         }
     ];
     workId:number;
+    link:string;
 }
 
 interface singlePortFolio{
@@ -72,6 +74,7 @@ const SinglePortFolio: React.FC<singlePortFolio> = ({ portfolioId }) => {
     return (
     <div  className={`lg:p-10 ${PortfolioModule.containerSettings}`}>      
         <div className='lg:w-3/4 mr-5'>
+            <Link className='lg:w-3/4 mr-5' href={portFolio?.link || "/"} target="_blank">
             <Image 
             src={portFolio?.picture || "/placeholder-image.png"} 
             alt={portFolio?.header || "Default Alt Text"} 
@@ -79,11 +82,14 @@ const SinglePortFolio: React.FC<singlePortFolio> = ({ portfolioId }) => {
             height={400}
             className="w-full h-auto"
             />
+            </Link>
         </div>
 
         <div className='lg:w-1/2'>
             <div>
+                <Link className='lg:w-3/4 mr-5' href={portFolio?.link || "/"} target="_blank">
                 <p className={PortfolioModule.customHeader}>{portFolio?.header}</p>
+                </Link>
             </div>
 
             <div>

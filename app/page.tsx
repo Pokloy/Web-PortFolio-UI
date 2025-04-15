@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <main>
         <div className={homeModule.backgroundImg}>
-          <div className={`${homeModule.placeholder1}`}>
+          <div className={`${homeModule.landingholder1}`}>
             <h1 className={homeModule.headerHome}>About Alier</h1>
             <hr className={homeModule.headerhr}/>
             <p className={`pt-6 ${homeModule.mobileP}`}>I specialize in crafting user-friendly, functional websites designed to meet your unique needs, whether static or dynamic. From stock inventory systems and enrollment platforms to employee management systems, I deliver tailored solutions that address your challenges.</p>
@@ -39,12 +39,18 @@ export default function Home() {
       <Link href="/expertise" className={homeModule.morePortfolioButton}>MORE ON PORTFOLIO</Link>
     </div>
 
-    <div className={`${homeModule.sayingSection} flex lg:pl-10 relative flex-wrap content-center h-64 rounded-lg`}>
-      <div className={`${homeModule.placeholder2} lg:ml-20 `}>
-          <p className={`lg:pt-6 pt-4`}>”An Idiot Admires Complexity. A genius Admires Simplicity“.</p>
-          <p className={`lg:pt-6 pt-4`}>-- Youtuber: FireShip --</p>
+    <div className={`${homeModule.sayingSection} flex items-center justify-center relative rounded-lg`}>
+      <div className={`${homeModule.placeholder2} shadow-lg rounded-xl backdrop-blur-md bg-black/60 border border-white/10`}>
+        <div className="flex items-start gap-2">
+          <span className="text-4xl text-orange-300 leading-none">“</span>
+          <p className="text-lg md:text-xl font-light italic text-[#C3A995]">
+            An Idiot Admires Complexity. A genius Admires Simplicity.
+          </p>
+        </div>
+        <p className="mt-4 text-sm text-right text-[#C3A995]">-- YouTuber: FireShip --</p>
       </div>
     </div>
+
 
     </main>
   )

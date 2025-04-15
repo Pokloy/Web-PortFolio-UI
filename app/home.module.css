@@ -36,6 +36,37 @@
     animation: slideInFromTop 1s ease-out; /* 1s duration with easing */
 }
 
+.landingholder1 {
+    position: relative;
+    border: 1px solid rgba(0,0,0,0.1);
+    background: #F6F1E1;
+    padding: 2rem;
+    z-index: 1;
+    overflow: hidden;
+    width: 50%;
+    height: 54%;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+
+    animation: slideInFromTop 1s ease-out;
+  }
+  
+  .landingholder1::before {
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(120deg, #F6F1E1, #f39c12, #e74c3c);
+    z-index: -1;
+    filter: blur(15px);
+    opacity: 0.2;
+  }
+  
+
 .headerHome{
     display: flex;
     justify-content: center;
@@ -160,29 +191,30 @@
     color: black;
 }
 
-.sayingSection{
+.sayingSection {
     background-image: url('/FireShipYoutube.png'); 
     background-size: cover; 
     background-position: center; 
     background-repeat: no-repeat; 
     height: 60vh; 
     width: 100%; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .placeholder2 {
     display: flex;
     flex-direction: column;
-    background-color: #080705;
+    background-color: rgba(8, 7, 5, 0.6); /* Slightly transparent for glass effect */
     color: #C3A995;
-    width: 30%;
-    height: 40%;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-    padding-left: 3rem;
-    padding-right: 1rem;
-
-    /* Animation */
-    animation: slideInFromTop 1s ease-out; /* 1s duration with easing */
+    width: 70%;
+    max-width: 700px;
+    padding: 2rem;
+    animation: fadeInUp 0.8s ease-out;
+    border-radius: 1rem;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
   /* Mobile Styles */

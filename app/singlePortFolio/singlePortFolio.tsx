@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import PortfolioModule from "./singlePortFolio.module.css";
+import useSWR from "swr";
 
 interface PortFolio{
     _id:string;
@@ -24,37 +25,49 @@ interface singlePortFolio{
     portfolioId:string;
 }
 
+const fetcher = async(url: string) => {
+    const res = await fetch(url);
+    const data = await res.json();
+
+    const formattedData = {
+        ...data.findSpecificWork,
+        picture: data.findSpecificWork.picture
+            .replace(
+                "https://drive.google.com/file/d/",
+                "https://drive.google.com/uc?export=view&id="
+            )
+            .replace("/view?usp=sharing", ""),
+    };
+
+    return formattedData;
+}
+
 const SinglePortFolio: React.FC<singlePortFolio> = ({ portfolioId }) => {
-    const [portFolio, setPortFolio] = useState<PortFolio| null>(null);
-    
-    useEffect(() => {
-        getPortfolio();
-    }, [portfolioId]);
-    
-    const getPortfolio = () => {
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}/work/find-work/${portfolioId}`, {
-            method: "GET",
-            headers: {
-              "Content-Type": "application/json",
-            },
-        })
-        .then((response) => response.json())
-        .then((data) => {
-            const formattedData = {
-                ...data.findSpecificWork,
-                picture: data.findSpecificWork.picture
-                    .replace(
-                        "https://drive.google.com/file/d/",
-                        "https://drive.google.com/uc?export=view&id="
-                    )
-                    .replace("/view?usp=sharing", ""),
-            };
-            setPortFolio(formattedData);
-        })
-        .catch((error) => {
-            console.error("Error:", error);
-        });
+    const { data:  portFolio, error, isLoading  } = useSWR(
+        `${process.env.NEXT_PUBLIC_API_URL}/work/find-work/${portfolioId}`,
+        fetcher
+    );
+
+
+    // Loading state
+    if (isLoading) {
+        return (
+        <div className="col-span-full flex justify-center items-center flex-col my-20">
+            <div className="loading-spinner-black"></div>
+            <p className="ml-4">Loading Tools...</p>
+        </div>
+        );
     }
+
+    // Error handling
+    if (error) {
+        return (
+        <div className="col-span-full text-center text-white">
+            <p>Error loading Tools. Please try again later.</p>
+        </div>
+        );
+    }
+
 
     return (
     <div  className={`lg:p-10 ${PortfolioModule.containerSettings}`}>      

@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import SingleTechStackModules from "./singleTechStack.module.css"
+import useSWR from "swr";
 
 interface TechStack{
   _id:string;
@@ -19,40 +20,49 @@ interface singleTechStack {
 }
 
 
-const SingleTechStack: React.FC<singleTechStack> = ({ techStackId }) => {
-  const [techStack, SetTechStack] = useState<TechStack| null>(null);
-    
-      
-  useEffect(() => {
-    getTechStack();
-  }, [techStackId]);  // Trigger fetch when portfolioId changes
-  
-  const getTechStack = () => {
-    fetch(`${process.env.NEXT_PUBLIC_API_URL}/techstack/find-techStack/${techStackId}`, {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    })
-    .then((response) => response.json())
-    .then((data) => {
-      const formattedData = {
-        ...data.findSpecificTechStack,
-        picture: data.findSpecificTechStack.picture
-          .replace(
-            "https://drive.google.com/file/d/",
-            "https://drive.google.com/uc?export=view&id="
-          )
-          .replace("/view?usp=sharing", ""),
-      };
-      SetTechStack(formattedData);  // Update state with fetched data
-    })
-    .catch((error) => {
-      console.error("Error:", error);
-    });
-  };
-  
+const fetcher = async(url: string) => {
+  const res = await fetch(url);
+  const data = await res.json();
 
+  const formattedData = {
+    ...data.findSpecificTechStack,
+    picture: data.findSpecificTechStack.picture
+      .replace(
+        "https://drive.google.com/file/d/",
+        "https://drive.google.com/uc?export=view&id="
+      )
+      .replace("/view?usp=sharing", ""),
+  };
+
+  return formattedData;
+}
+
+
+
+const SingleTechStack: React.FC<singleTechStack> = ({ techStackId }) => {
+  const { data:  techStack, error, isLoading } = useSWR(
+      `${process.env.NEXT_PUBLIC_API_URL}/techstack/find-techStack/${techStackId}`,
+      fetcher
+  );
+    
+  // Loading state
+  if (isLoading) {
+      return (
+      <div className="col-span-full flex justify-center items-center flex-col my-20">
+          <div className="loading-spinner-black"></div>
+          <p className="ml-4">Loading Tools...</p>
+      </div>
+      );
+  }
+
+  // Error handling
+  if (error) {
+      return (
+      <div className="col-span-full text-center text-white">
+          <p>Error loading Tools. Please try again later.</p>
+      </div>
+      );
+  }
 
   return (
     <div>

@@ -62,9 +62,8 @@ const SingleTool: React.FC<singleTool> = ({ toolId }) => {
               alt={tools?.subHeader || "Default Alt Text"}
               width={400}
               height={400}
-              className="w-full h-auto"
             /> 
-            <div><p className={SingleToolModules.customSubHeader}>{tools?.subHeader}</p></div>
+            <div className="mt-10"><p className={SingleToolModules.customSubHeader}>{tools?.subHeader}</p></div>
             <div><p className={`pt-9 text-justify`}>{tools?.content}</p></div>
         </div>
     </div>

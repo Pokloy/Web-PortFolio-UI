@@ -82,7 +82,7 @@
 }
 
 .specializedSection{
-    height: 30vh; 
+    height: 50vh; 
     width: 100%;
     display: flex;
     margin-top:1rem;
@@ -316,4 +316,9 @@
         align-items: center;
         justify-content: center;
     }
+
+    .landingholder1 {
+        width: 100%;
+        height: auto;
+      }
   }

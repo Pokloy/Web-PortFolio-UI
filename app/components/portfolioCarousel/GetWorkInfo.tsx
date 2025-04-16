@@ -63,7 +63,7 @@ const GetWorkInfo = () => {
   }
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 p-4">
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 pt-14">
       {workData && workData.length > 0 ? (
         workData.map((work: Work, index: any) => (
           <Link key={index} href={`/singlePortFolio/${work._id}`} className="block group">

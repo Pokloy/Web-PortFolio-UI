@@ -74,8 +74,8 @@ const SingleTechStack: React.FC<singleTechStack> = ({ techStackId }) => {
        <Image 
           src={techStack?.picture || "/placeholder-image.png"}
           alt={techStack?.subHeader || "Default Alt Text"}
-          width={400}
-          height={400}
+          width={200}
+          height={200}
           className="w-full h-auto"
         /> 
         <div><p className={`${SingleTechStackModules.customSubHeader}`}>{techStack?.subHeader}</p></div>
